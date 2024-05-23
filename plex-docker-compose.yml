@@ -10,7 +10,7 @@ services:
       - VERSION=docker
       - PLEX_CLAIM= #optional
     volumes:
-      - /path/to/library:/config
-      - /path/to/tvseries:/tv
-      - /path/to/movies:/movies
+      - /path/to/library:/config # para usar con disco duro externo, montar automáticamente desde /etc/fstab
+      - /path/to/tvseries:/tv    # concediendo permisos. Añadir al archivo la siguiente linea: 
+      - /path/to/movies:/movies  # UUID=29A454401B165805 /home/imunnic/storage ntfs defaults,uid=$(user),gid=$(user) 0 0
     restart: unless-stopped
