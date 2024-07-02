@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis/redis-stack:latest
+    container_name: redis-stack
+    ports:
+      - "6379:6379"   # Puerto estándar de Redis
+      - "8001:8001"   # Puerto de la interfaz web de Redis Stack
+    volumes:
+      - redis-data:/data
+    environment:
+      - REDIS_PASSWORD=yourpassword
+
+volumes:
+  redis-data:
+    driver: local
