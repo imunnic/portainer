@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"  # Mapea el puerto 80 del contenedor al puerto 80 de tu máquina host
+    volumes:
+      - ./html:/usr/share/nginx/html  # Mapea el directorio local "html" al directorio donde Nginx sirve los archivos
+    restart: always  # Reinicia el contenedor automáticamente si se cae
